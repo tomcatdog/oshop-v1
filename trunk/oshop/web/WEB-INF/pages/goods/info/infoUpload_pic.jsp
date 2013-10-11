@@ -13,7 +13,7 @@
 </head>
 <body>
 <div id="body-wrapper">
-<jsp:include page="/WEB-INF/pages/include/menu.jsp" />
+<jsp:include page="/WEB-INF/pages/include/common.jsp" />
 <div id="main-content">
 <div class="content-box">
 	<div class="content-box-content">
