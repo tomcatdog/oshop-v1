@@ -18,7 +18,7 @@ var base_path = "<%=basePath %>";
 </head>
 <body>
 <div id="body-wrapper">
-<jsp:include page="include/menu.jsp" />
+<jsp:include page="include/common.jsp" />
 <div id="main-content">
 	<h2>${welcome } ${sessionScope.login_account.loginName }, 欢迎回来！</h2>
     <p id="page-intro">别觉得你被世界抛弃了，世界根本就没空搭理你</p>
