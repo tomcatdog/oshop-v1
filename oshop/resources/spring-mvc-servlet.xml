@@ -35,7 +35,7 @@
     </property>
 	</bean> -->
 	
-	<mvc:view-controller path="/" view-name="/admin/security/dashboard"/>
+	<mvc:view-controller path="/" view-name="/admin/security/index"/>
 	
 	<!-- 定义JSP文件的位置 --> 
 	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
