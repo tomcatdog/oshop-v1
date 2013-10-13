@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </ul>
     </li>
     <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">设置</span></a></li>
-    <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">安全退出</span></a></li>
+    <li class=""><a title="" href="<%=basePath %>admin/security/logout"><i class="icon icon-share-alt"></i> <span class="text">安全退出</span></a></li>
   </ul>
 </div>
 <!--close-top-Header-menu-->
@@ -44,9 +44,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <!--close-top-serch-->
 <!--sidebar-menu-->
-<div id="sidebar"><a href="<%=basePath %>" class="visible-phone"><i class="icon icon-home"></i> 仪表盘</a>
+<div id="sidebar"><a href="<%=basePath %>admin/security/index" class="visible-phone"><i class="icon icon-home"></i> 仪表盘</a>
   <ul>
-    <li class="active"><a href="<%=basePath %>"><i class="icon icon-home"></i> <span> 仪表盘</span></a> </li>
+    <li class="active"><a href="<%=basePath %>admin/security/index"><i class="icon icon-home"></i> <span> 仪表盘</span></a> </li>
     <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span> 商品管理</span> <span class="label label-important">2</span></a>
       <ul>
         <li><a id="_goods_info_List" href="<%=basePath%>goods/info/info_List">商品管理</a></li>
