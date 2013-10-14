@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="<%=basePath %>resources/css/bootstrap.min.css" />
 <link rel="stylesheet" href="<%=basePath %>resources/css/bootstrap-responsive.min.css" />
-<link rel="stylesheet" href="<%=basePath %>resources/css/matrix-login.css" />
+<link rel="stylesheet" href="<%=basePath %>resources/css/oshop-login.css" />
 <link rel="stylesheet" href="<%=basePath %>resources/font-awesome/css/font-awesome.css" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800" type="text/css">
 </head>
