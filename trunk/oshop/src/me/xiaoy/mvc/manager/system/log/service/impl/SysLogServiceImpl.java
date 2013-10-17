@@ -6,22 +6,22 @@ import javax.annotation.Resource;
 
 import me.xiaoy.core.common.page.PageList;
 import me.xiaoy.mvc.manager.security.entity.LoginAccount;
-import me.xiaoy.mvc.manager.system.log.dao.LogDao;
-import me.xiaoy.mvc.manager.system.log.entity.Log;
-import me.xiaoy.mvc.manager.system.log.service.LogService;
+import me.xiaoy.mvc.manager.system.log.dao.SysLogDao;
+import me.xiaoy.mvc.manager.system.log.entity.SysLog;
+import me.xiaoy.mvc.manager.system.log.service.SysLogService;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service("logService")
 @Transactional
-public class LogServiceImpl implements LogService {
+public class SysLogServiceImpl implements SysLogService {
 
 	@Resource
-	private LogDao logDao;
+	private SysLogDao logDao;
 	
 	public void save(LoginAccount account, String ip, String operation) {
-		Log log = new Log();
+		SysLog log = new SysLog();
 		log.setIp(ip);
 		if(account != null) {
 			log.setAccountId(account.getId());
@@ -32,7 +32,7 @@ public class LogServiceImpl implements LogService {
 		logDao.save(log);
 	}
 
-	public PageList<Log> query(PageList<Log> p, Log log) {
+	public PageList<SysLog> query(PageList<SysLog> p, SysLog log) {
 		return logDao.list(p, log);
 	}
 

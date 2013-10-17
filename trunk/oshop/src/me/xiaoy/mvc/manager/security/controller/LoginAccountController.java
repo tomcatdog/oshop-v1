@@ -17,7 +17,7 @@ import me.xiaoy.mvc.manager.security.entity.LoginAccount;
 import me.xiaoy.mvc.manager.security.entity.LoginAccountGradeEnum;
 import me.xiaoy.mvc.manager.security.entity.LoginAccountStateEnum;
 import me.xiaoy.mvc.manager.security.service.LoginAccountService;
-import me.xiaoy.mvc.manager.system.log.service.LogService;
+import me.xiaoy.mvc.manager.system.log.service.SysLogService;
 
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.shiro.SecurityUtils;
@@ -52,7 +52,7 @@ public class LoginAccountController extends BaseController {
 	private static final Logger logger = LoggerFactory.getLogger(LoginAccountController.class);
 
 	@Resource
-	private LogService logService;
+	private SysLogService logService;
 	
 	@Resource
 	private LoginAccountService loginAccountService;

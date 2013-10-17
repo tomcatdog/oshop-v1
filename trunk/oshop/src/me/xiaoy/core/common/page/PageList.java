@@ -6,7 +6,7 @@ import java.util.List;
 public class PageList<T> extends AbstractPage {	
 	
 	/** 每页默认List大小 */
-	public static final int DEFAULT_LIST_SIZE = 15;
+	public static final int DEFAULT_LIST_SIZE = 10;
 	
 	/** 
 	 * 页内容

@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.annotation.Resource;
 
 import me.xiaoy.mvc.manager.security.entity.LoginAccount;
-import me.xiaoy.mvc.manager.system.log.service.LogService;
+import me.xiaoy.mvc.manager.system.log.service.SysLogService;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,7 +28,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class LogTest {
 	
 	@Resource
-	private LogService logService;
+	private SysLogService logService;
 
 	@Test
 	@Rollback(false)

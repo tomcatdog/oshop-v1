@@ -3,14 +3,14 @@ package me.xiaoy.mvc.manager.system.log.dao;
 import java.io.Serializable;
 
 import me.xiaoy.core.common.page.PageList;
-import me.xiaoy.mvc.manager.system.log.entity.Log;
+import me.xiaoy.mvc.manager.system.log.entity.SysLog;
 
 
-public interface LogDao {
+public interface SysLogDao {
 
-	Serializable save(Log t);
+	Serializable save(SysLog t);
 
-	PageList<Log> list(PageList<Log> page,Log t);
+	PageList<SysLog> list(PageList<SysLog> page,SysLog t);
 
 	void delete(Long[] ids);
 
