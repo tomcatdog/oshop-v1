@@ -8,7 +8,7 @@ import me.xiaoy.core.base.BaseModel;
 
 @Entity
 @Table(name = "t_log")
-public class Log extends BaseModel {
+public class SysLog extends BaseModel {
 
 	@Column(name = "account_id")
 	private Long accountId;

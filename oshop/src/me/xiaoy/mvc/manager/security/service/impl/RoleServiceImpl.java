@@ -9,7 +9,7 @@ import me.xiaoy.mvc.manager.security.dao.RoleDao;
 import me.xiaoy.mvc.manager.security.entity.LoginAccount;
 import me.xiaoy.mvc.manager.security.entity.Role;
 import me.xiaoy.mvc.manager.security.service.RoleService;
-import me.xiaoy.mvc.manager.system.log.service.LogService;
+import me.xiaoy.mvc.manager.system.log.service.SysLogService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +26,7 @@ public class RoleServiceImpl implements RoleService {
 	RoleDao roleDao;
 
 	@Resource
-	private LogService logService;
+	private SysLogService logService;
 	
 	@Override
 	public Role get(Long id) {

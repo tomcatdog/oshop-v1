@@ -6,15 +6,15 @@ import java.util.List;
 import me.xiaoy.core.base.BaseDao;
 import me.xiaoy.core.common.page.PageList;
 import me.xiaoy.core.utils.StringUtil;
-import me.xiaoy.mvc.manager.system.log.dao.LogDao;
-import me.xiaoy.mvc.manager.system.log.entity.Log;
+import me.xiaoy.mvc.manager.system.log.dao.SysLogDao;
+import me.xiaoy.mvc.manager.system.log.entity.SysLog;
 
 import org.springframework.stereotype.Repository;
 
 @Repository(value="logDao")
-public class LogDaoHibernate extends BaseDao<Log> implements LogDao {
+public class SysLogDaoHibernate extends BaseDao<SysLog> implements SysLogDao {
 
-	public PageList<Log> list(PageList<Log> p, Log t) {
+	public PageList<SysLog> list(PageList<SysLog> p, SysLog t) {
 		StringBuffer hql = new StringBuffer("from " + entityClass.getName() + " as t where 1=1");
 		List<Object> params = new ArrayList<Object>();
 		if(t != null) {
@@ -43,6 +43,7 @@ public class LogDaoHibernate extends BaseDao<Log> implements LogDao {
 				params.add(t.getCreateTime2());
 			}
 		}
+		p.addDescending("createTime");
 		return super.query(p, hql.toString(), params.toArray());
 	}
 

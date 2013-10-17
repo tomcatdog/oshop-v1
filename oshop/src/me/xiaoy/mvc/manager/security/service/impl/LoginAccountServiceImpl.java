@@ -11,7 +11,7 @@ import me.xiaoy.core.utils.StringUtil;
 import me.xiaoy.mvc.manager.security.dao.LoginAccountDao;
 import me.xiaoy.mvc.manager.security.entity.LoginAccount;
 import me.xiaoy.mvc.manager.security.service.LoginAccountService;
-import me.xiaoy.mvc.manager.system.log.service.LogService;
+import me.xiaoy.mvc.manager.system.log.service.SysLogService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +28,7 @@ public class LoginAccountServiceImpl implements LoginAccountService{
 	private LoginAccountDao loginDao;
 	
 	@Resource
-	private LogService logService;
+	private SysLogService logService;
 	
 	public void updateLoginFailureCount(LoginAccount account){
 		loginDao.updateLoginFailureCount(account);

@@ -5,8 +5,8 @@ import java.util.Arrays;
 import me.xiaoy.core.base.BaseController;
 import me.xiaoy.core.common.page.PageList;
 import me.xiaoy.core.utils.StringUtil;
-import me.xiaoy.mvc.manager.system.log.entity.Log;
-import me.xiaoy.mvc.manager.system.log.service.LogService;
+import me.xiaoy.mvc.manager.system.log.entity.SysLog;
+import me.xiaoy.mvc.manager.system.log.service.SysLogService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,12 +19,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping(value = "/admin/system/log")
-public class LogController extends BaseController {
+public class SysLogController extends BaseController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(LogController.class); 
+	private static final Logger logger = LoggerFactory.getLogger(SysLogController.class); 
 	
 	@Autowired
-	private LogService logService;
+	private SysLogService logService;
 	
 	/**
 	 * 查询日志列表
@@ -33,11 +33,11 @@ public class LogController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(value = "list")
-	public ModelAndView list(@ModelAttribute("log")Log log, PageList<Log> page){
+	public ModelAndView list(@ModelAttribute("log")SysLog log, PageList<SysLog> page){
 		logger.debug("查询日志开始...");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("system/log/list");
-		PageList<Log> list = logService.query(page, log);
+		PageList<SysLog> list = logService.query(page, log);
 		mv.addObject("page", list);
 		logger.debug("查询日志结束， 数量： " + list.getAllSize());
 		return mv;

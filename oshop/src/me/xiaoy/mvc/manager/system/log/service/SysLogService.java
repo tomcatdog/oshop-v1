@@ -2,9 +2,9 @@ package me.xiaoy.mvc.manager.system.log.service;
 
 import me.xiaoy.core.common.page.PageList;
 import me.xiaoy.mvc.manager.security.entity.LoginAccount;
-import me.xiaoy.mvc.manager.system.log.entity.Log;
+import me.xiaoy.mvc.manager.system.log.entity.SysLog;
 
-public interface LogService {
+public interface SysLogService {
 
 	/**
 	 * 添加用户操作日志
@@ -14,7 +14,7 @@ public interface LogService {
 	 */
 	public void save(LoginAccount account, String ip, String operation);
 
-	public PageList<Log> query(PageList<Log> p, Log log);
+	public PageList<SysLog> query(PageList<SysLog> p, SysLog log);
 
 	public void delete(Long[] ids);
 

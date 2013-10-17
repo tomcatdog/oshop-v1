@@ -9,7 +9,7 @@ import javax.annotation.Resource;
 import me.xiaoy.core.common.page.PageList;
 import me.xiaoy.mvc.manager.security.entity.LoginAccount;
 import me.xiaoy.mvc.manager.security.service.impl.LoginAccountServiceImpl;
-import me.xiaoy.mvc.manager.system.log.service.LogService;
+import me.xiaoy.mvc.manager.system.log.service.SysLogService;
 import me.xiaoy.mvc.manager.system.parm.dao.SysParamDao;
 import me.xiaoy.mvc.manager.system.parm.entity.SysParam;
 import me.xiaoy.mvc.manager.system.parm.service.SysParamService;
@@ -26,7 +26,7 @@ public class SysParamServiceImpl implements SysParamService{
 	private static final Logger logger = LoggerFactory.getLogger(LoginAccountServiceImpl.class);
 	
 	@Resource
-	private LogService logService;
+	private SysLogService logService;
 	
 	@Resource
 	private SysParamDao sysParamDao;
