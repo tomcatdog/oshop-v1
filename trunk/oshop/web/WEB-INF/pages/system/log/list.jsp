@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link rel="stylesheet" href="<%=basePath %>resources/css/oshop-media.css" />
 <link rel="stylesheet" href="<%=basePath %>resources/css/pagination.css" />
 <link rel="stylesheet" href="<%=basePath %>resources/font-awesome/css/font-awesome.css" />
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800" />
 </head>
 <body>
 <jsp:include page="/WEB-INF/pages/include/common.jsp" />
