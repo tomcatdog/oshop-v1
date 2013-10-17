@@ -44,16 +44,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <!--close-top-serch-->
 <!--sidebar-menu-->
-<div id="sidebar"><a href="<%=basePath %>admin/security/index" class="visible-phone"><i class="icon icon-home"></i> 仪表盘</a>
+<div id="sidebar"><a href="<%=basePath %>admin/security/index" class="visible-phone"><i class="icon icon-home"></i> 首页</a>
   <ul>
-    <li class="active"><a href="<%=basePath %>admin/security/index"><i class="icon icon-home"></i> <span> 仪表盘</span></a> </li>
+    <li class="active"><a href="<%=basePath %>admin/security/index"><i class="icon icon-home"></i> <span> 首页</span></a> </li>
     <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span> 商品管理</span> <span class="label label-important">2</span></a>
       <ul>
         <li><a id="_goods_info_List" href="<%=basePath%>goods/info/info_List">商品管理</a></li>
         <li><a id="_goods_List" href="<%=basePath%>goods/classification/goods_List">分类管理</a></li>
       </ul>
     </li>
-    <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>订单管理</span> <span class="label label-important">5</span></a>
+    <li class="submenu"> <a href="#"><i class="icon icon-reorder"></i> <span>订单管理</span> <span class="label label-important">5</span></a>
       <ul>
         <li><a href="#">订单管理</a></li>
         <li><a href="#">收货人管理</a></li>
@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <li><a href="#">退货管理</a></li>
       </ul>
     </li>
-    <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>会员管理</span> <span class="label label-important">5</span></a>
+    <li class="submenu"> <a href="#"><i class="icon icon-user"></i> <span>会员管理</span> <span class="label label-important">5</span></a>
       <ul>
         <li><a href="#">会员管理</a></li>
         <li><a href="#">会员等级</a></li>
@@ -71,7 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <li><a href="#">咨询管理</a></li>
       </ul>
     </li>
-    <li class="submenu"> <a href="#"><i class="icon icon-info-sign"></i> <span>内容管理</span> <span class="label label-important">9</span></a>
+    <li class="submenu"> <a href="#"><i class="icon icon-cloud"></i> <span>内容管理</span> <span class="label label-important">9</span></a>
       <ul>
         <li><a href="#">导航管理</a></li>
         <li><a href="#">文章管理</a></li>
@@ -84,7 +84,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <li><a href="#">静态化</a></li>
       </ul>
     </li>
-    <li class="submenu"> <a href="#"><i class="icon icon-info-sign"></i> <span>统计报表</span> <span class="label label-important">5</span></a>
+    <li class="submenu"> <a href="#"><i class="icon icon-signal"></i> <span>统计报表</span> <span class="label label-important">5</span></a>
       <ul>
         <li><a href="#">预存款</a></li>
         <li><a href="#">访问统计</a></li>
@@ -93,7 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <li><a href="#">会员消费统计</a></li>
       </ul>
     </li>
-    <li class="submenu"> <a href="#"><i class="icon icon-info-sign"></i> <span>系统管理</span> <span class="label label-important">5</span></a>
+    <li class="submenu"> <a href="#"><i class="icon icon-desktop"></i> <span>系统管理</span> <span class="label label-important">5</span></a>
       <ul>
         <li><a href="<%=basePath %>admin/system/param/list">参数设置</a></li>
         <li><a href="<%=basePath %>admin/security/account/list">管理员</a></li>

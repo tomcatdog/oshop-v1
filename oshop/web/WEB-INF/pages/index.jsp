@@ -30,7 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div class="container-fluid">
     <div class="quick-actions_homepage">
       <ul class="quick-actions">
-        <li class="bg_lb"> <a href="#"> <i class="icon-dashboard"></i> 仪表盘 </a> </li>
+        <li class="bg_lb"> <a href="#"> <i class="icon-home"></i> 首页 </a> </li>
         <li class="bg_lg span3"> <a href="#"> <i class="icon-th-list"></i> 商品管理</a> </li>
         <li class="bg_ly span2"> <a href="#"> <i class="icon-reorder"></i> 订单管理 </a> </li>
         <li class="bg_lo span3"> <a href="#"> <i class="icon-user"></i> 会员管理</a> </li>
