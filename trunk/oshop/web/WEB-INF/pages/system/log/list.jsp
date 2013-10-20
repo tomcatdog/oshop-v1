@@ -13,6 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="<%=basePath %>resources/css/bootstrap.min.css" />
 <link rel="stylesheet" href="<%=basePath %>resources/css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" href="<%=basePath %>thirdparty/datetimepicker/css/bootstrap-datetimepicker.min.css" />
 <link rel="stylesheet" href="<%=basePath %>resources/css/uniform.css" />
 <link rel="stylesheet" href="<%=basePath %>resources/css/select2.css" />
 <link rel="stylesheet" href="<%=basePath %>resources/css/oshop-style.css" />
@@ -33,6 +34,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<div class="widget-box">
     	<div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
         	<h5>系统日志</h5>
+        </div>
+        <div class="widget-content nopadding">
+		    <form action="<%=basePath %>admin/system/log/list" method="post">
+		    	<table class="table table-striped with-check no-border list-search">
+		    		<tr>
+		    			<td><label class="control-label input-small" for="ip">登陆ip</label></td>
+		    			<td><input type="text" id="ip" name="ip" class="input-medium" placeholder="ip"/></td>
+		    			<td><label class="control-label input-small" for="operation">操作详情</label></td>
+				    	<td><input type="text" id="operation" name="operation" class="input-medium" placeholder="操作详情" /></td>
+				    	<td><a href="#" class="btn btn-success" ><i class="icon-white icon-search"></i>搜索</a></td>
+		    		</tr>
+		    		<tr>
+		    			<td><label class="control-label input-small" for="createTime">记录时间起始</label></td>
+		    			<td>
+		    			<div id="datetimepicker1" class="input-append">
+			    			<input data-format="yyyy-MM-dd HH:mm:ss" type="text" id="createTime" name="createTime" class="input-medium" placeholder="查询开始时间" />
+						    <span class="add-on">
+						    	<i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+						    </span>
+					    </div>
+		    			</td>
+		    			<td><label class="control-label input-small" for="createTime2">记录时间截止</label></td>
+				    	<td><input type="text" id="createTime2" name="createTime2" class="input-medium" placeholder="查询结束时间" /></td>
+		    		</tr>
+		    	</table>
+		    </form>
         </div>
         <div class="widget-content">
             <table class="table table-bordered table-striped with-check">
@@ -66,11 +93,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <jsp:include page="/WEB-INF/pages/include/pagination.jsp"/>
         </div>
     </div>
+</div>
 <script src="<%=basePath %>resources/js/jquery.min.js"></script> 
 <script src="<%=basePath %>resources/js/bootstrap.min.js"></script> 
 <script src="<%=basePath %>resources/js/jquery.uniform.js"></script> 
 <script src="<%=basePath %>resources/js/select2.min.js"></script> 
 <script src="<%=basePath %>resources/js/oshop.js"></script>
 <script src="<%=basePath %>resources/js/oshop.tables.js"></script>
+<script src="<%=basePath %>thirdparty/datetimepicker/js/bootstrap-datetimepicker.min.js"></script> 
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".active").removeClass("active");
+	$("#system_log").parent().addClass("active");
+	$("#system_log").parent().parent().parent().addClass("active").addClass("open");
+	
+	$("#datetimepicker1").datetimepicker({
+    	language: 'en'
+    });
+	
+});
+</script>
 </body>
 </html>
