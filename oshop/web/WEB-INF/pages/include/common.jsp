@@ -93,12 +93,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <li><a href="#">会员消费统计</a></li>
       </ul>
     </li>
-    <li class="submenu"> <a href="#"><i class="icon icon-desktop"></i> <span>系统管理</span> <span class="label label-important">5</span></a>
+    <li class="submenu"> <a href="#"><i class="icon icon-desktop"></i> <span>系统管理</span></a>
       <ul>
         <li><a href="<%=basePath %>admin/system/param/list">参数设置</a></li>
         <li><a href="<%=basePath %>admin/security/account/list">管理员</a></li>
         <li><a href="<%=basePath %>admin/security/role/list">角色管理</a></li>
-        <li><a href="<%=basePath %>admin/system/log/list">日志管理</a></li>
+        <li><a id="system_log" href="<%=basePath %>admin/system/log/list">日志管理</a></li>
       </ul>
     </li>
   </ul>

@@ -1587,3 +1587,6 @@ div.dataTables_wrapper .ui-widget-header {
 }
 #sidebar .content{ display:none;}
 }
+
+.no-border, .no-border td{border: 0;}
+.list-search td{padding: 10px 0 0 10px;}

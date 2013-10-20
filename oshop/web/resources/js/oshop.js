@@ -10,7 +10,6 @@ $(document).ready(function(){
 		
 		//setting active menu
 		$(".active").removeClass("active");
-		$(this).addClass("active");
 		li.addClass("active");
 		
 		if(li.hasClass('open')) {
