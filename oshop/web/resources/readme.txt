@@ -7,3 +7,4 @@ js文件说明：
 	表单美化插件： jquery.uniform.js
 	下拉框优化插件： select2.min.js
 	自动补齐组件： typeheader.js 类似jquery的autoComplete
+	自动格式化文本： jquery.maskedinput.js
