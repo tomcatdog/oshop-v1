@@ -1,0 +1,27 @@
+/*************** Pagination ***************/
+
+.pagination {
+                text-align: right;
+                padding: 0 5px;
+                font-family: Verdana, Arial, Helvetica, sans-serif;
+                }
+.pagination a {
+                margin: 0 5px 0 0;
+                padding: 3px 6px;
+                }
+
+.pagination a.number {
+				border: 1px solid #ddd;
+                }
+
+.pagination a.current {
+                background: #469400 url('../images/bg-button-green.gif') top left repeat-x !important;
+                border-color: #459300 !important;
+                color: #fff !important;
+                }
+				
+.pagination a.current:hover {
+				text-decoration: underline;
+                }
+
+/************ Shortcut Buttons ************/
