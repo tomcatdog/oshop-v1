@@ -85,7 +85,6 @@
     <mvc:resources mapping="/userfiles/**" location="/userfiles/" />  
     <mvc:resources mapping="/resources/**" location="/resources/" />
     <mvc:resources mapping="/thirdparty/**" location="/thirdparty/" />
-    <mvc:resources mapping="/userfiles/**" location="/userfiles/" />
 
     
     <!-- 文件上传 -->

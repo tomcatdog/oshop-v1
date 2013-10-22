@@ -13,12 +13,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="<%=basePath %>resources/css/bootstrap.min.css" />
 <link rel="stylesheet" href="<%=basePath %>resources/css/bootstrap-responsive.min.css" />
-<link rel="stylesheet" href="<%=basePath %>thirdparty/datetimepicker/css/bootstrap-datetimepicker.min.css" />
 <link rel="stylesheet" href="<%=basePath %>resources/css/uniform.css" />
 <link rel="stylesheet" href="<%=basePath %>resources/css/select2.css" />
 <link rel="stylesheet" href="<%=basePath %>resources/css/oshop-style.css" />
 <link rel="stylesheet" href="<%=basePath %>resources/css/oshop-media.css" />
 <link rel="stylesheet" href="<%=basePath %>resources/css/pagination.css" />
+<link rel="stylesheet" href="<%=basePath %>thirdparty/datepicker/css/datetimepicker.min.css" />
 <link rel="stylesheet" href="<%=basePath %>resources/font-awesome/css/font-awesome.css" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800" />
 </head>
@@ -36,27 +36,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<h5>系统日志</h5>
         </div>
         <div class="widget-content nopadding">
-		    <form action="<%=basePath %>admin/system/log/list" method="post">
+		    <form action="<%=basePath %>admin/system/log/list" method="post" id="search_form">
 		    	<table class="table table-striped with-check no-border list-search">
 		    		<tr>
-		    			<td><label class="control-label input-small" for="ip">登陆ip</label></td>
-		    			<td><input type="text" id="ip" name="ip" class="input-medium" placeholder="ip"/></td>
-		    			<td><label class="control-label input-small" for="operation">操作详情</label></td>
-				    	<td><input type="text" id="operation" name="operation" class="input-medium" placeholder="操作详情" /></td>
-				    	<td><a href="#" class="btn btn-success" ><i class="icon-white icon-search"></i>搜索</a></td>
+		    			<td><label class="control-label input-medium" for="ip">登陆ip</label></td>
+		    			<td>
+		    				<input type="text" id="ip" name="ip" class="input-medium" placeholder="ip" value="${log.ip }"/>
+		    			</td>
+		    			<td><label class="control-label" for="operation">操作详情</label></td>
+				    	<td><input type="text" id="operation" name="operation" class="input-medium" placeholder="操作详情" value="${log.operation }"/></td>
+				    	<td><a href="javascript: search();" id="search_btn" class="btn btn-success" ><i class="icon-white icon-search"></i>搜索</a></td>
 		    		</tr>
 		    		<tr>
-		    			<td><label class="control-label input-small" for="createTime">记录时间起始</label></td>
+		    			<td><label class="control-label" for="createTime">记录时间起始</label></td>
 		    			<td>
-		    			<div id="datetimepicker1" class="input-append">
-			    			<input data-format="yyyy-MM-dd HH:mm:ss" type="text" id="createTime" name="createTime" class="input-medium" placeholder="查询开始时间" />
-						    <span class="add-on">
-						    	<i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
-						    </span>
-					    </div>
+                			<div class="controls input-append date form_datetime" data-date-format="yyyy-MM-dd HH:mm:ss" >
+			                    <input type="text" id="createTime" name="createTime" class="input-medium" value='<fmt:formatDate value="${log.createTime }" type="both" pattern="yyyy-MM-dd HH:mm:ss"/>' />
+			                    <span class="add-on"><i class="icon-remove"></i></span>
+								<span class="add-on"><i class="icon-time"></i></span>
+			                </div>
 		    			</td>
-		    			<td><label class="control-label input-small" for="createTime2">记录时间截止</label></td>
-				    	<td><input type="text" id="createTime2" name="createTime2" class="input-medium" placeholder="查询结束时间" /></td>
+		    			<td><label class="control-label" for="createTime2">记录时间截止</label></td>
+				    	<td>
+                			<div class="controls input-append date form_datetime" data-date-format="yyyy-MM-dd HH:mm:ss" >
+			                    <input type="text" id="createTime2" name="createTime2" class="input-medium" value='<fmt:formatDate value="${log.createTime2 }" type="both" pattern="yyyy-MM-dd HH:mm:ss"/>' />
+			                    <span class="add-on"><i class="icon-remove"></i></span>
+								<span class="add-on"><i class="icon-time"></i></span>
+			                </div>
+						</td>
 		    		</tr>
 		    	</table>
 		    </form>
@@ -94,23 +101,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
     </div>
 </div>
-<script src="<%=basePath %>resources/js/jquery.min.js"></script> 
+<script src="<%=basePath %>resources/js/jquery.min.js"></script>
+<script src="<%=basePath %>resources/js/jquery-migrate-1.2.1.js"></script>
 <script src="<%=basePath %>resources/js/bootstrap.min.js"></script> 
 <script src="<%=basePath %>resources/js/jquery.uniform.js"></script> 
 <script src="<%=basePath %>resources/js/select2.min.js"></script> 
 <script src="<%=basePath %>resources/js/oshop.js"></script>
 <script src="<%=basePath %>resources/js/oshop.tables.js"></script>
-<script src="<%=basePath %>thirdparty/datetimepicker/js/bootstrap-datetimepicker.min.js"></script> 
+<script src="<%=basePath %>thirdparty/datepicker/js/datetimepicker.min.js"></script>
+<script src="<%=basePath %>thirdparty/datepicker/js/locales/bootstrap-datetimepicker.zh-CN-NUM.js"></script> 
 <script type="text/javascript">
 $(document).ready(function(){
 	$(".active").removeClass("active");
 	$("#system_log").parent().addClass("active");
 	$("#system_log").parent().parent().parent().addClass("active").addClass("open");
 	
-	$("#datetimepicker1").datetimepicker({
-    	language: 'en'
-    });
+	$("#search_btn").click(function(){
+		$("#search_form").submit();
+	});
 	
+	$(".form_datetime").datetimepicker({
+        language:  "zh-CN-NUM",
+        format: "yyyy-MM-dd HH:ii:ss",
+        weekStart: 0,
+        todayBtn: true,
+		autoclose: true,
+		todayHighlight: true
+    });
 });
 </script>
 </body>
