@@ -11,6 +11,12 @@ function check() {
 	$("#password").val($("#_password").val());
 	$("#loginform").submit();
 }
+
+$("html").off().on("keydown",function(event){  
+    if(event.keyCode==13){  
+    	check();
+    }  
+});
     
 $(document).ready(function(){
 	$('#to-recover').click(function(){
