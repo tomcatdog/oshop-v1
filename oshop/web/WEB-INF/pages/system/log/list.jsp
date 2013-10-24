@@ -102,7 +102,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
 </div>
 <script src="<%=basePath %>resources/js/jquery.min.js"></script>
-<script src="<%=basePath %>resources/js/jquery-migrate-1.2.1.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="<%=basePath %>resources/js/bootstrap.min.js"></script> 
 <script src="<%=basePath %>resources/js/jquery.uniform.js"></script> 
 <script src="<%=basePath %>resources/js/select2.min.js"></script> 
@@ -113,8 +113,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript">
 $(document).ready(function(){
 	$(".active").removeClass("active");
-	$("#system_log").parent().addClass("active");
-	$("#system_log").parent().parent().parent().addClass("active").addClass("open");
+	$("#menu_system_log").addClass("active");
+	$("#menu_system").addClass("open");
 	
 	$("#search_btn").click(function(){
 		$("#search_form").submit();
